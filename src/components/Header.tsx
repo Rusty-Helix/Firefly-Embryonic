@@ -16,7 +16,10 @@ import {
 } from "react-router-dom"
 import { useAppSelector } from "../app/hooks";
 import { changeTheme } from "../app/slices/AuthSlice";
-import { getCreateMeetingBreadCrumbs } from "../utils/breadCrumbs";
+import {
+    getCreateMeetingBreadCrumbs,
+    getOneOnOneMeetingsBreadCrumbs,
+} from "../utils/breadCrumbs";
 import { firebaseAuth } from "../utils/FirebaseConfig";
 
 function Header() {
@@ -35,7 +38,9 @@ function Header() {
 useEffect(() => {
     const {pathname} = location;
     if(pathname==="/create") {
-        setBreadCrumbs(getCreateMeetingBreadCrumbs(navigate))
+        setBreadCrumbs(getCreateMeetingBreadCrumbs(navigate));
+    } else if (pathname==="/create1on1") {
+        setBreadCrumbs(getOneOnOneMeetingsBreadCrumbs(navigate))
     }
 }, [location, navigate])
 
