@@ -16,6 +16,7 @@ import {
 } from "react-router-dom"
 import { useAppSelector } from "../app/hooks";
 import { changeTheme } from "../app/slices/AuthSlice";
+import { getCreateMeetingBreadCrumbs } from "../utils/breadCrumbs";
 import { firebaseAuth } from "../utils/FirebaseConfig";
 
 function Header() {
@@ -30,6 +31,13 @@ function Header() {
     const logout = () => {
         signOut(firebaseAuth);
     };
+
+useEffect(() => {
+    const {pathname} = location;
+    if(pathname==="/create") {
+        setBreadCrumbs(getCreateMeetingBreadCrumbs(navigate))
+    }
+}, [location, navigate])
 
     const invertTheme = () => {
         const theme = localStorage.getItem("zoom-theme")
@@ -119,6 +127,49 @@ function Header() {
                 </EuiText>
             </Link>
         ]
+    },{
+        items:[
+            <EuiFlexGroup
+                justifyContent="center"
+                alignItems="center"
+                direction="row"
+                style={{gap:"2vw"}}
+            >
+                
+                <EuiFlexItem grow={false} style={{flexBasis:"fit-content"}}>
+                    {
+                    isDarkTheme ? (
+                    <EuiButtonIcon
+                        onClick={invertTheme}
+                        iconType="sun"
+                        display="fill"
+                        size="s" 
+                        color="warning"
+                        aria-label="invert-theme-button"
+                    />
+                    ):(                    
+                    <EuiButtonIcon
+                        onClick={invertTheme}
+                        iconType="moon"
+                        display="fill"
+                        size="s"
+                        color="ghost"
+                        aria-label="invert-theme-button"
+                    />                    
+                )}
+                </EuiFlexItem>
+                <EuiFlexItem grow={false} style={{flexBasis:"fit-content"}}>
+                    <EuiButtonIcon
+                        onClick={logout}
+                        iconType="lock"
+                        display="fill"
+                        size="s"
+                        aria-label="logout-button"
+                    />
+                </EuiFlexItem>
+
+            </EuiFlexGroup>
+        ]
     },
 
 ];
@@ -137,6 +188,7 @@ function Header() {
 
     <EuiHeader 
         style={{minHeight: "8vh"}}
+        // theme="light"
         sections={[{ breadcrumbs: breadCrumbs }]}
     />
 

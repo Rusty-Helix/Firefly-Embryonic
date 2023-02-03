@@ -2,11 +2,12 @@ import {
   EuiProvider,
   EuiThemeProvider,
   EuiThemeColorMode,
+
 } from "@elastic/eui";
-import "@elastic/eui/dist/eui_theme_light.css";
-import "@elastic/eui/dist/eui_theme_dark.css";
+
 import React, {useEffect, useState} from 'react';
-import {Routes, Route} from "react-router-dom"
+import {Routes, Route} from "react-router-dom";
+import ThemeSelector from "./components/ThemeSelector";
 
 import {
   useAppDispatch,
@@ -15,6 +16,8 @@ import {
 
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
+import CreateMeeting from "./pages/CreateMeeting";
+import OneOnOneMeeting from "./pages/OneOnOneMeeting";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -49,17 +52,23 @@ function App() {
 
 
   return (
+    <ThemeSelector>
+      
     <EuiProvider colorMode={theme}>
 
       <EuiThemeProvider modify={overrides}>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/create" element={<CreateMeeting />} />
+          <Route path="/create1on1" element={<OneOnOneMeeting />} />
           <Route path="/" element={<Dashboard />} />
           <Route path="*" element={<Dashboard />} />
         </Routes>
       </EuiThemeProvider>
     
     </EuiProvider>
+
+    </ThemeSelector>
     );
 }
 

@@ -29,7 +29,6 @@ function Dashboard() {
                         display: "flex",
                         height: "100vh",
                         flexDirection: "column"
-                
                     }}
                 >
                     <Header />
