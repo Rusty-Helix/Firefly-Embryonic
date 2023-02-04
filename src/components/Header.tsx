@@ -19,6 +19,7 @@ import { changeTheme } from "../app/slices/AuthSlice";
 import {
     getCreateMeetingBreadCrumbs,
     getOneOnOneMeetingsBreadCrumbs,
+    getVideoConferenceBreadCrumbs,
 } from "../utils/breadCrumbs";
 import { firebaseAuth } from "../utils/FirebaseConfig";
 
@@ -40,7 +41,9 @@ useEffect(() => {
     if(pathname==="/create") {
         setBreadCrumbs(getCreateMeetingBreadCrumbs(navigate));
     } else if (pathname==="/create1on1") {
-        setBreadCrumbs(getOneOnOneMeetingsBreadCrumbs(navigate))
+        setBreadCrumbs(getOneOnOneMeetingsBreadCrumbs(navigate));
+    } else if (pathname==="/createvideoconference") {
+        setBreadCrumbs(getVideoConferenceBreadCrumbs(navigate));
     }
 }, [location, navigate])
 

@@ -20,6 +20,7 @@ import Login from "./pages/Login";
 import CreateMeeting from "./pages/CreateMeeting";
 import OneOnOneMeeting from "./pages/OneOnOneMeeting";
 import VideoConference from "./pages/VideoConference";
+import ManageMeetings from "./pages/ManageMeetings";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -56,7 +57,7 @@ function App() {
 
   const removeToast = (removeToast:{ id: string }) => {
     dispatch(setToasts(
-        toasts.filter((toast:{id:string}) => toast.id === removeToast.id)
+        toasts.filter((toast:{id:string}) => toast.id !== removeToast.id)
       ));
   };
 
@@ -71,6 +72,7 @@ function App() {
           <Route path="/create" element={<CreateMeeting />} />
           <Route path="/create1on1" element={<OneOnOneMeeting />} />
           <Route path="/createvideoconference" element={<VideoConference />} />
+          <Route path="/managemeetings" element={<ManageMeetings />} />
           <Route path="/" element={<Dashboard />} />
           <Route path="*" element={<Dashboard />} />
         </Routes>

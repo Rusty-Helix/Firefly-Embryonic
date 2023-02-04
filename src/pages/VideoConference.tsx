@@ -10,7 +10,7 @@ import MeetingNameField from "../components/FormComponents/MeetingNameField"
 import MeetingUsersField from "../components/FormComponents/MeetingUsersField"
 import MeetingDateField from "../components/FormComponents/MeetingDateField"
 import CreateMeetingButtons from "../components/FormComponents/CreateMeetingButtons"
-import MeetingMaximumUserField from "../components/FormComponents/MeetingMaximumUserField"
+import MeetingMaximumUsersField from "../components/FormComponents/MeetingMaximumUsersField"
 
 import Header from "../components/Header";
 import useAuth from "../hooks/useAuth";
@@ -32,6 +32,7 @@ function VideoConference() {
     const [users] = useFetchUsers();
     const [createToast] = useToast()
     const navigate = useNavigate();
+
     const uid = useAppSelector((zoom) => zoom.auth.userInfo?.uid);
     const [meetingName, setMeetingName] = useState("")
     const [selectedUsers, setSelectedUsers] = useState<Array<UserType>>([])
@@ -133,7 +134,7 @@ function VideoConference() {
 
                 {
                     isUniversallyAccessible ? (
-                    <MeetingMaximumUserField value={size} setValue={setSize} />
+                    <MeetingMaximumUsersField value={size} setValue={setSize} />
                     ):(
                         <MeetingUsersField 
                         label="Invite User"

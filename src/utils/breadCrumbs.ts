@@ -12,7 +12,7 @@ export const getCreateMeetingBreadCrumbs = (
             navigate("/");
         },
     },{
-        text:"Create Meeting",
+        text:"Create a Meeting",
     },
 ];
 
@@ -26,12 +26,32 @@ export const getOneOnOneMeetingsBreadCrumbs=(
             navigate("/");
         },
     },{
-        text:"Create Meeting",
+        text:"Create a Meeting",
         href: "#",
         onClick: () => {
             navigate("/create");
         },
     },{
-        text: "Create One-on-one Meeting."
+        text: "Create an One-on-one Meeting."
+    }
+    ];
+
+export const getVideoConferenceBreadCrumbs =(
+    navigate: NavigateFunction
+    ) :Array<BreadCrumbsType> => [
+    {
+        text: "Dashboard",
+        href: "#",
+        onClick: () => {
+            navigate("/");
+        },
+    },{
+        text:"Create a Meeting",
+        href: "#",
+        onClick: () => {
+            navigate("/create");
+        },
+    },{
+        text: "Create a Video Conference",
     }
     ];

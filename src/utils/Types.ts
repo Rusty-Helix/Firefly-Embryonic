@@ -12,6 +12,20 @@ export interface UserType {
     label?: string;
 }
 
+export type MeetingJoinType = "1-on-1" | "private-video-conference" | "universally-accessible-video-conference";
+
+export interface MeetingType {
+  docId?: string;
+  createdBy: string;
+  invitedUsers: Array<string>;
+  maxUsers: number;
+  meetingDate: string;
+  meetingId: string;
+  meetingName: string;
+  meetingType: MeetingJoinType;
+  status: boolean;
+}
+
 export interface FieldErrorType {
     show:boolean;
     message:Array<string>;

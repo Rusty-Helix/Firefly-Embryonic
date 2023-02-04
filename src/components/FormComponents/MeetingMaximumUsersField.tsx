@@ -4,7 +4,7 @@ import {
 } from "@elastic/eui"
 import React from "react"
 
-export default function MeetingmaximumUserField({value, setValue}:{
+export default function MeetingmaximumUsersField({value, setValue}:{
     value:number,
     setValue:React.Dispatch<React.SetStateAction<number>>;
 }) {

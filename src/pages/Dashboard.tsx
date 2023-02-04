@@ -38,9 +38,22 @@ function Dashboard() {
                         alignItems="center"
                         style={{margin:"5vh 10vw"}}
                     >
+
                         <EuiFlexItem>
                             <EuiCard 
-                                icon={<EuiImage size="5rem" alt="icon" src={dashboard1} />}
+                                icon={<EuiImage size="5rem" alt="icon" src={dashboard3} />}
+                                title={`Scheduled Meetings`}
+                                description="View meetings you are invited to"
+
+                                onClick={() => navigate('/scheduledmeetings')}
+                                paddingSize="xl"
+                            />
+
+                        </EuiFlexItem>
+
+                        <EuiFlexItem>
+                            <EuiCard 
+                                icon={<EuiImage size="100%" alt="icon" src={dashboard1} />}
                                 title={`Arrange a Meeting`}
                                 description="Create a new meeting and invite people"
 
@@ -49,28 +62,19 @@ function Dashboard() {
                             />
 
                         </EuiFlexItem>
+
                         <EuiFlexItem>
                             <EuiCard 
-                                icon={<EuiImage size="100%" alt="icon" src={dashboard2} />}
-                                title={`Meeting Management`}
-                                description="View meetings hosted by you"
+                                icon={<EuiImage size="5rem" alt="icon" src={dashboard2} />}
+                                title={`Manage Meetings`}
+                                description="View the meetings hosted by you"
 
-                                onClick={() => navigate('/mymeetings')}
+                                onClick={() => navigate('/managemeetings')}
                                 paddingSize="xl"
                             />
 
                         </EuiFlexItem>
-                        <EuiFlexItem>
-                            <EuiCard 
-                                icon={<EuiImage size="5rem" alt="icon" src={dashboard3} />}
-                                title={`Meetings`}
-                                description="View meetings you are invited to"
-
-                                onClick={() => navigate('/meetings')}
-                                paddingSize="xl"
-                            />
-
-                        </EuiFlexItem>
+                        
                     </EuiFlexGroup>
                 </div>
             </>

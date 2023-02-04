@@ -9,9 +9,13 @@ import React from "react";
 
 
 export default function CreateMeetingButtons({
-    createMeeting
+    createMeeting,
+    isEdit,
+    closeFlyout
 }:{
-    createMeeting: () => void
+    createMeeting: () => void;
+    isEdit?: boolean
+    closeFlyout?: () => {};
 }) {
     const navigate = useNavigate();
     return (
@@ -20,7 +24,7 @@ export default function CreateMeetingButtons({
                     <EuiButton
                         color="danger"
                         fill
-                        onClick={()=>navigate("/")}
+                        onClick={()=> (isEdit ? closeFlyout!() : navigate("/"))}
                     >
                         Cancel
                     </ EuiButton>
@@ -29,8 +33,8 @@ export default function CreateMeetingButtons({
                     <EuiButton
                         fill
                         onClick={createMeeting}
-                    >
-                        Submit
+                        >
+                        {isEdit ? "Edit Meeting" : "Create Meeting"}
                     </ EuiButton>
                 </EuiFlexItem>
             </EuiFlexGroup>
