@@ -119,7 +119,7 @@ export default function ManageMeetings() {
                 field: "meetingId",
                 name: "Meeting Link",
                 render:(meetingId:string)=> {
-                    return (<EuiCopy textToCopy={`${process.env.REACT_APP_HOST}/join/${meetingId}`}
+                    return (<EuiCopy textToCopy={`${window.location.origin}/join/${meetingId}`}
                     >
                         {(copy:any)=>(
                             <EuiButtonIcon 
