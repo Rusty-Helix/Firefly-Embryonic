@@ -65,7 +65,7 @@ useEffect(() => {
             <Link to="/">
                 <EuiText>
                     <h2 style={{padding:"0 1vw"}}>
-                        <EuiTextColor color="#7091FF">Firefly 火蠅</EuiTextColor>
+                        <EuiTextColor color="#7091FF">Firefly 焰蠅</EuiTextColor>
                     </h2>
                 </EuiText>
                 {/* <EuiImage src={firefly_pure_logo} alt="firefly logo" size="230px" /> */}
@@ -95,9 +95,6 @@ useEffect(() => {
                 direction="row"
                 style={{gap:"2vw"}}
             >
-                const currentPath = window.location.origin + window.location.pathname;
-                console.log(currentPath);
-
                 <EuiFlexItem grow={false} style={{flexBasis:"fit-content"}}>
                     {
 
