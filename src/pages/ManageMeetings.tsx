@@ -119,7 +119,7 @@ export default function ManageMeetings() {
                 field: "meetingId",
                 name: "Meeting Link",
                 render:(meetingId:string)=> {
-                    return (<EuiCopy textToCopy={`${window.location.origin}/join/${meetingId}`}
+                    return (<EuiCopy textToCopy={`https://rusty-helix.github.io/join/${meetingId}`}
                     >
                         {(copy:any)=>(
                             <EuiButtonIcon 
