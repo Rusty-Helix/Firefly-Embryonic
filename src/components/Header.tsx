@@ -5,7 +5,6 @@ import {
     EuiFlexGroup,
     EuiFlexItem,
     EuiButtonIcon,
-    EuiImage,
 } from "@elastic/eui";
 import { signOut } from "firebase/auth";
 import React, {useState, useEffect} from "react"
@@ -96,9 +95,12 @@ useEffect(() => {
                 direction="row"
                 style={{gap:"2vw"}}
             >
-                
+                const currentPath = window.location.origin + window.location.pathname;
+                console.log(currentPath);
+
                 <EuiFlexItem grow={false} style={{flexBasis:"fit-content"}}>
                     {
+
                     isDarkTheme ? (
                     <EuiButtonIcon
                         onClick={invertTheme}
@@ -117,12 +119,15 @@ useEffect(() => {
                         color="ghost"
                         aria-label="invert-theme-button"
                     />                    
-                )}
+                )
+                
+                
+                }
                 </EuiFlexItem>
                 <EuiFlexItem grow={false} style={{flexBasis:"fit-content"}}>
                     <EuiButtonIcon
                         onClick={logout}
-                        iconType="lock"
+                        iconType="popout"
                         display="fill"
                         size="s"
                         aria-label="logout-button"
