@@ -5,6 +5,7 @@ import {
     EuiFlexGroup,
     EuiFlexItem,
     EuiButtonIcon,
+    EuiImage,
 } from "@elastic/eui";
 import { signOut } from "firebase/auth";
 import React, {useState, useEffect} from "react"
@@ -24,6 +25,7 @@ import {
     getScheduledMeetingsBreadCrumbs,
 } from "../utils/breadCrumbs";
 import { firebaseAuth } from "../utils/FirebaseConfig";
+// import firefly_pure_logo from "../assets/firefly-pure-logo.png"
 
 function Header() {
     const navigate = useNavigate()
@@ -64,9 +66,10 @@ useEffect(() => {
             <Link to="/">
                 <EuiText>
                     <h2 style={{padding:"0 1vw"}}>
-                        <EuiTextColor color="#0b5cff">Zoom</EuiTextColor>
+                        <EuiTextColor color="#7091FF">Firefly 火蠅</EuiTextColor>
                     </h2>
                 </EuiText>
+                {/* <EuiImage src={firefly_pure_logo} alt="firefly logo" size="230px" /> */}
             </Link>
         ]
     },
@@ -76,8 +79,8 @@ useEffect(() => {
                 {username? (
                     <EuiText>
                         <h3>
-                            <EuiTextColor color="white">Hello, </EuiTextColor>
-                            <EuiTextColor color="#0b5cff">{username}</EuiTextColor>
+                            <EuiTextColor color="white">Best Online Meeting Platform</EuiTextColor>
+                            {/* <EuiTextColor color="#0b5cff">{username}</EuiTextColor> */}
                         </h3>
                     </EuiText>
                 ):null

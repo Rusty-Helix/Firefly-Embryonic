@@ -22,7 +22,8 @@ import {
     where, } from "firebase/firestore";
 import React from "react"
 import animation from "../assets/animation.gif"
-import logo from "../assets/logo.png";
+// import logo from "../assets/logo.png";
+import firefly_logo from "../assets/firefly-logo-aesthetic-without-background.png"
 import { firebaseAuth, userRef } from "../utils/FirebaseConfig";
 import {useNavigate} from "react-router-dom"
 import {useAppDispatch} from "../app/hooks";
@@ -77,14 +78,17 @@ function Login() {
                             <EuiImage src={animation} alt="logo" />
                         </EuiFlexItem>
                         <EuiFlexItem>
-                            <EuiImage src={logo} alt="logo" size="230px" />
+                            <EuiImage src={firefly_logo} alt="firefly logo" size="230px" />
                             <EuiSpacer size="xs"/>
                             <EuiText textAlign="center" grow={false}>
                                 <h3>
-                                    <EuiTextColor>
-                                        One Platform to 
-                                    </EuiTextColor>
-                                    <EuiTextColor color="#0b5cff"> connect</EuiTextColor>
+                                    {/* <EuiTextColor>
+                                        Customize Your Meeting Room
+                                    </EuiTextColor> */}
+                                    {/* <EuiTextColor color="#0b5cff"> Customize Your Meeting Rooms</EuiTextColor> */}
+                                    <EuiSpacer size="s"/>
+                                    {/* xs, s, m, l, xl, xxl */}
+                                    <EuiTextColor color="#7091FF"> Customize Your Meeting Rooms</EuiTextColor>
                                 </h3>
                             </EuiText>
                             <EuiSpacer size="l"/>
