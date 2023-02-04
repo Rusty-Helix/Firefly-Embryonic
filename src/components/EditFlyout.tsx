@@ -20,27 +20,29 @@ import MeetingDateField from "./FormComponents/MeetingDateField";
 import MeetingMaximumUsersField from "./FormComponents/MeetingMaximumUsersField";
 import MeetingNameField from "./FormComponents/MeetingNameField";
 import MeetingUserField from "./FormComponents/MeetingUsersField";
-import { useAppSelector } from "../app/hooks";
+// import { useAppSelector } from "../app/hooks";
 import useAuth from "../hooks/useAuth";
 
 
 export default function EditFlyout({
         closeFlyout,
-        meetings,
+        meeting,
     }:{
         closeFlyout:any;
-        meetings:MeetingType;
+        meeting:MeetingType;
     }) {
     useAuth();
     const [users] = useFetchUsers();
     const [createToast] = useToast()
         
-    const [meetingName, setMeetingName] = useState(meetings.meetingName)
+    const [meetingName, setMeetingName] = useState(meeting.meetingName)
     const [selectedUsers, setSelectedUsers] = useState<Array<UserType>>([])
-    const [startDate, setStartDate] = useState(moment(meetings.meetingDate));
+    const [startDate, setStartDate] = useState(moment(meeting.meetingDate));
     const [size, setSize] = useState(1); // capacity of the meeting room
+    
+    const [meetingType] = useState(meeting.meetingType);
     const [status, setStatus] = useState(false);
-    const [meetingType] = useState(meetings.meetingType);
+
     const [showErrors] = useState<{
         meetingName: FieldErrorType;
         meetingUser: FieldErrorType;
@@ -57,16 +59,18 @@ export default function EditFlyout({
 
     useEffect(()=> {
         if(users) {
+            console.log(meeting)
             const foundUsers :Array<UserType> = [];
-            meetings.invitedUsers.forEach((user:string)=>{
-                const findUser = users.find(
-                    (tempUser: UserType) => tempUser.uid === user    
-                );
+            meeting.invitedUsers.forEach((user: string) => {
+              const findUser = users.find(
+            (tempUser: UserType) => tempUser.uid === user
+        );
+           
                 if (findUser) foundUsers.push(findUser);
             });
             setSelectedUsers(foundUsers);
         }
-    }, [meetings, users])
+    }, [meeting, users])
 
     const onUserChange = (selectedOptions:any) => {
         setSelectedUsers(selectedOptions);
@@ -74,7 +78,7 @@ export default function EditFlyout({
 
     const editMeeting = async () => {
     const editedMeeting = {
-      ...meetings,
+      ...meeting,
       meetingName,
       meetingType,
       invitedUsers: selectedUsers.map((user: UserType) => user.uid),
@@ -83,7 +87,7 @@ export default function EditFlyout({
       status: !status,
     };
     delete editedMeeting.docId;
-    const docRef = doc(firebaseDB, "meetings", meetings.docId!);
+    const docRef = doc(firebaseDB, "meeting", meeting.docId!);
     await updateDoc(docRef, editedMeeting);
     createToast({ title: "Meeting updated successfully.", type: "success" });
     closeFlyout(true);
@@ -93,7 +97,7 @@ export default function EditFlyout({
     <EuiFlyout ownFocus onClose={() => closeFlyout()}>
       <EuiFlyoutHeader hasBorder>
         <EuiTitle size="m">
-          <h2>{meetings.meetingName}</h2>
+          <h2>{meeting.meetingName}</h2>
         </EuiTitle>
       </EuiFlyoutHeader>
       <EuiFlyoutBody>
@@ -111,7 +115,7 @@ export default function EditFlyout({
             <MeetingMaximumUsersField value={size} setValue={setSize} />
           ) : (
             <MeetingUserField
-              label="Invite Users"
+              label="Invited Users"
               isInvalid={showErrors.meetingUser.show}
               error={showErrors.meetingUser.message}
               options={users}

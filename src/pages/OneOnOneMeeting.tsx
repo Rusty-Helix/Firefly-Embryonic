@@ -3,7 +3,7 @@ import {
     EuiForm,
     EuiSpacer,
 } from "@elastic/eui";
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import MeetingNameField from "../components/FormComponents/MeetingNameField"
 import MeetingUsersField from "../components/FormComponents/MeetingUsersField"
 import MeetingDateField from "../components/FormComponents/MeetingDateField"
@@ -81,7 +81,7 @@ function OneOnOneMeeting() {
                 meetingId,
                 meetingName,
                 meetingType:"1-on-1",
-                inviteUsers:[selectedUsers[0].uid],
+                invitedUsers:[selectedUsers[0].uid],
                 meetingDate:startDate.format("L"),
                 maxUsers: 1,
                 status: true,
@@ -114,7 +114,7 @@ function OneOnOneMeeting() {
                     error={showErrors.meetingName.message}
                 />
                 <MeetingUsersField 
-                    label="Invite User"
+                    label="Invited User"
                     options={users}
                     onChange={onUserChange}
                     selectedOptions={selectedUsers}

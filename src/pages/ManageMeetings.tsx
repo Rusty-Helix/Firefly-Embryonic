@@ -163,7 +163,7 @@ export default function ManageMeetings() {
             {
                 showEditFlyout && (<EditFlyout
                     closeFlyout={closeEditFlyout} 
-                    meetings={editMeeting!}
+                    meeting={editMeeting!}
                 />)
             }
 

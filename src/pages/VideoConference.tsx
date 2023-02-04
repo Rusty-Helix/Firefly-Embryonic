@@ -87,7 +87,7 @@ function VideoConference() {
                 meetingId,
                 meetingName,
                 meetingType: isUniversallyAccessible ? "universally-accessible-video-conference" : "private-video-conference",
-                inviteUsers: isUniversallyAccessible 
+                invitedUsers: isUniversallyAccessible 
                     ? [] : selectedUsers.map((user: UserType)=>user.uid),
                 meetingDate:startDate.format("L"),
                 maxUsers: isUniversallyAccessible ? 100 : size,
@@ -137,7 +137,7 @@ function VideoConference() {
                     <MeetingMaximumUsersField value={size} setValue={setSize} />
                     ):(
                         <MeetingUsersField 
-                        label="Invite User"
+                        label="Invited Users"
                         options={users}
                         onChange={onUserChange}
                         selectedOptions={selectedUsers}
