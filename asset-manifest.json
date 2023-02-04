@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/Firefly-Embryonic/static/js/main.b260500c.js",
+    "main.js": "/Firefly-Embryonic/static/js/main.a962da2a.js",
     "static/js/9076.30634ace.chunk.js": "/Firefly-Embryonic/static/js/9076.30634ace.chunk.js",
     "static/js/5644.adbb8b9d.chunk.js": "/Firefly-Embryonic/static/js/5644.adbb8b9d.chunk.js",
     "icon.accessibility.js": "/Firefly-Embryonic/static/js/icon.accessibility.680da0de.chunk.js",
@@ -476,7 +476,7 @@
     "static/media/animation.gif": "/Firefly-Embryonic/static/media/animation.f96cd653adf38d1993e0.gif",
     "static/media/firefly-logo-aesthetic-without-background.png": "/Firefly-Embryonic/static/media/firefly-logo-aesthetic-without-background.b4b113a40041368d9771.png",
     "index.html": "/Firefly-Embryonic/index.html",
-    "main.b260500c.js.map": "/Firefly-Embryonic/static/js/main.b260500c.js.map",
+    "main.a962da2a.js.map": "/Firefly-Embryonic/static/js/main.a962da2a.js.map",
     "9076.30634ace.chunk.js.map": "/Firefly-Embryonic/static/js/9076.30634ace.chunk.js.map",
     "5644.adbb8b9d.chunk.js.map": "/Firefly-Embryonic/static/js/5644.adbb8b9d.chunk.js.map",
     "icon.accessibility.680da0de.chunk.js.map": "/Firefly-Embryonic/static/js/icon.accessibility.680da0de.chunk.js.map",
@@ -951,6 +951,6 @@
     "1656.a6eea568.chunk.css.map": "/Firefly-Embryonic/static/css/1656.a6eea568.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/main.b260500c.js"
+    "static/js/main.a962da2a.js"
   ]
 }
