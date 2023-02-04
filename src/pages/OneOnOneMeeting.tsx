@@ -90,7 +90,7 @@ function OneOnOneMeeting() {
                 title: "One on One Meeting Created Successfully.",
                 type: "success",
             });
-            navigate("/")
+            navigate("/scheduledmeetings")
         }
     }
 

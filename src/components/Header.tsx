@@ -20,6 +20,8 @@ import {
     getCreateMeetingBreadCrumbs,
     getOneOnOneMeetingsBreadCrumbs,
     getVideoConferenceBreadCrumbs,
+    getManageMeetingsBreadCrumbs,
+    getScheduledMeetingsBreadCrumbs,
 } from "../utils/breadCrumbs";
 import { firebaseAuth } from "../utils/FirebaseConfig";
 
@@ -44,6 +46,10 @@ useEffect(() => {
         setBreadCrumbs(getOneOnOneMeetingsBreadCrumbs(navigate));
     } else if (pathname==="/createvideoconference") {
         setBreadCrumbs(getVideoConferenceBreadCrumbs(navigate));
+    } else if (pathname==="/managemeetings") {
+        setBreadCrumbs(getManageMeetingsBreadCrumbs(navigate));
+    } else if (pathname==="/scheduledmeetings") {
+        setBreadCrumbs(getScheduledMeetingsBreadCrumbs(navigate));
     }
 }, [location, navigate])
 

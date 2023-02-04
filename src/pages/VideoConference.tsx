@@ -98,7 +98,7 @@ function VideoConference() {
                     ? "Universally Accessible Video Conference Created" : "Private Video Conference Created",
                 type: "success",
             });
-            navigate("/")
+            navigate("/scheduledmeetings")
         }
     }
 

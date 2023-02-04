@@ -59,7 +59,6 @@ export default function EditFlyout({
 
     useEffect(()=> {
         if(users) {
-            console.log(meeting)
             const foundUsers :Array<UserType> = [];
             meeting.invitedUsers.forEach((user: string) => {
               const findUser = users.find(
@@ -87,7 +86,7 @@ export default function EditFlyout({
       status: !status,
     };
     delete editedMeeting.docId;
-    const docRef = doc(firebaseDB, "meeting", meeting.docId!);
+    const docRef = doc(firebaseDB, "meetings", meeting.docId!);
     await updateDoc(docRef, editedMeeting);
     createToast({ title: "Meeting updated successfully.", type: "success" });
     closeFlyout(true);

@@ -55,3 +55,31 @@ export const getVideoConferenceBreadCrumbs =(
         text: "Create a Video Conference",
     }
     ];
+
+export const getManageMeetingsBreadCrumbs =(
+    navigate: NavigateFunction
+    ) :Array<BreadCrumbsType> => [
+    {
+        text: "Dashboard",
+        href: "#",
+        onClick: () => {
+            navigate("/");
+        },
+    },{
+        text: "Manage Meetings",
+    }
+    ];
+
+export const getScheduledMeetingsBreadCrumbs =(
+    navigate: NavigateFunction
+    ) :Array<BreadCrumbsType> => [
+    {
+        text: "Dashboard",
+        href: "#",
+        onClick: () => {
+            navigate("/");
+        },
+    },{
+        text: "Scheduled Meetings",
+    }
+    ];

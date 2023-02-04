@@ -13,7 +13,7 @@ export default function CreateMeetingButtons({
     isEdit,
     closeFlyout
 }:{
-    createMeeting: () => void;
+    createMeeting: () => {};
     isEdit?: boolean
     closeFlyout?: () => {};
 }) {

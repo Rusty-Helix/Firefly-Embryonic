@@ -15,6 +15,7 @@
     "@types/node": "^16.18.11",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "@zegocloud/zego-uikit-prebuilt": "^1.6.2",
     "firebase": "^9.16.0",
     "moment": "^2.29.4",
     "prop-types": "^15.8.1",
