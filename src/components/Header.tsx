@@ -78,7 +78,7 @@ useEffect(() => {
                 {username? (
                     <EuiText>
                         <h3>
-                            <EuiTextColor color="white">Best Online Meeting Platform</EuiTextColor>
+                            <EuiTextColor color="white">Tentative Site for Project Proposition</EuiTextColor>
                             {/* <EuiTextColor color="#0b5cff">{username}</EuiTextColor> */}
                         </h3>
                     </EuiText>
