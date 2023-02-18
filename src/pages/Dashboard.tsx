@@ -42,8 +42,8 @@ function Dashboard() {
                         <EuiFlexItem>
                             <EuiCard 
                                 icon={<EuiImage size="5rem" alt="icon" src={dashboard3} />}
-                                title={`Extensions`}
-                                description="Customize your meetings with plug-ins"
+                                title={`Scheduled Meetings`}
+                                description="View the meetings you are invited to"
 
                                 onClick={() => navigate('/scheduledmeetings')}
                                 paddingSize="xl"

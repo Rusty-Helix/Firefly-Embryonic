@@ -80,6 +80,6 @@ export const getScheduledMeetingsBreadCrumbs =(
             navigate("/");
         },
     },{
-        text: "Extensions",
+        text: "Scheduled Meetings",
     }
     ];
